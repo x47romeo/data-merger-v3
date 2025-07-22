@@ -12,18 +12,36 @@ import logging
 import json
 from io import BytesIO, StringIO
 
+# Set page config first to avoid conflicts
+st.set_page_config(
+    page_title="Data Merger V3",
+    page_icon="🔄",
+    layout="wide",
+    initial_sidebar_state="expanded"
+)
+
 # Configure logging
 def setup_logging():
-    """Configure logging to write to app.log file with INFO level."""
-    logging.basicConfig(
-        level=logging.INFO,
-        format='%(asctime)s - %(levelname)s - %(message)s',
-        handlers=[
-            logging.FileHandler('app.log'),
-            logging.StreamHandler()
-        ]
-    )
-    return logging.getLogger(__name__)
+    """Configure logging for cloud deployment with fallback."""
+    try:
+        # Try to create file handler, fallback to console only if it fails
+        handlers = [logging.StreamHandler()]
+        try:
+            handlers.append(logging.FileHandler('app.log'))
+        except (PermissionError, OSError):
+            # File logging might not be available in cloud environments
+            pass
+
+        logging.basicConfig(
+            level=logging.INFO,
+            format='%(asctime)s - %(levelname)s - %(message)s',
+            handlers=handlers,
+            force=True  # Override any existing configuration
+        )
+        return logging.getLogger(__name__)
+    except Exception:
+        # Fallback to basic logging if anything fails
+        return logging.getLogger(__name__)
 
 # Initialize logger
 logger = setup_logging()
@@ -419,13 +437,7 @@ def create_excel_with_sheets(merged_df, unmatched_pos, unmatched_supplier):
 
 def main():
     """Main application function."""
-    # Page configuration MUST be the first Streamlit command
-    st.set_page_config(
-        page_title="Data Merger V3 - Interactive Workflow",
-        page_icon="🔄",
-        layout="wide",
-        initial_sidebar_state="collapsed"
-    )
+    # Page config is already set at module level
 
     # Log application start
     logger.info("Data Merger V3 session started.")
