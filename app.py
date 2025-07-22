@@ -767,4 +767,9 @@ def main():
                         logger.error(f"Export failed: {str(e)}")
 
 if __name__ == "__main__":
-    main()
+    try:
+        main()
+    except Exception as e:
+        st.error(f"Application failed to start: {str(e)}")
+        logger.error(f"Application startup error: {str(e)}")
+        st.stop()
