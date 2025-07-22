@@ -1,0 +1,9 @@
+UPC,Supplier_Name,Cost_Price,Category,Brand,Weight_oz,Supplier_SKU
+123456789012,ABC Suppliers,6.50,Electronics,TechBrand,2.5,SKU-001
+234567890123,XYZ Corp,9.25,Electronics,TechBrand,3.2,SKU-002
+345678901234,ABC Suppliers,4.10,Home & Garden,GreenCorp,1.8,SKU-003
+456789012345,DEF Industries,13.75,Electronics,ProTech,5.1,SKU-004
+567890123456,ABC Suppliers,7.80,Home & Garden,GreenCorp,2.9,SKU-005
+678901234567,GHI Wholesale,11.25,Electronics,TechBrand,4.3,SKU-006
+789012345678,ABC Suppliers,5.60,Home & Garden,EcoFriendly,1.5,SKU-007
+999888777666,JKL Suppliers,8.90,Sports,ActiveGear,3.7,SKU-008
