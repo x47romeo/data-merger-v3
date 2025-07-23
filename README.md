@@ -1,13 +1,13 @@
 # Data Merger V3 - The Interactive Data Workflow Assistant
 
-🌐 **[Live Demo Available on Streamlit Cloud!](https://your-app-url-here.streamlit.app)**
+🌐 **[Live Demo Available on Streamlit Cloud!](https://romeo-data-merger-v3.streamlit.app/)**
 
 A revolutionary Streamlit web application that transforms simple file merging into an advanced, interactive data workflow. **Version 3 introduces the power of Polars, interactive transformations, and intelligent multi-format exports!**
 
 ## 🚀 Quick Start
 
 ### Option 1: Use Online (Recommended)
-Visit the live application: **[Data Merger V3 Live App](https://your-app-url-here.streamlit.app)**
+Visit the live application: **[Data Merger V3 Live App](https://romeo-data-merger-v3.streamlit.app/)**
 
 ### Option 2: Run Locally
 ```bash
@@ -211,7 +211,7 @@ This application is deployed on **Streamlit Community Cloud** for free public ac
 
 ## 📊 Live Demo
 
-Try the application online: **[Data Merger V3 Live App](https://your-app-url-here.streamlit.app)**
+Try the application online: **[Data Merger V3 Live App](https://romeo-data-merger-v3.streamlit.app/)**
 
 ## 🤝 Contributing
 
